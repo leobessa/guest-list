@@ -1,0 +1,9 @@
+one:
+  name: MyString
+  category: 
+  essential: false
+
+two:
+  name: MyString
+  category: 
+  essential: false

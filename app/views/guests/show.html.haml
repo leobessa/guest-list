@@ -1,0 +1,18 @@
+- title "Guest"
+
+%p
+  %strong Name:
+  =h @guest.name
+%p
+  %strong Category:
+  =h @guest.category
+%p
+  %strong Essential:
+  =h @guest.essential
+
+%p
+  = link_to "Edit", edit_guest_path(@guest)
+  |
+  = link_to "Destroy", @guest, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", guests_path
