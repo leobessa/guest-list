@@ -1,8 +1,6 @@
-- form_for @category do |f|
+- semantic_form_for @category do |f|
   = f.error_messages
-  %p
-    = f.label :name
-    %br
-    = f.text_field :name
-  %p
-    = f.submit "Submit"
+  - f.inputs do
+    = f.input :name
+  - f.buttons do
+    = f.commit_button

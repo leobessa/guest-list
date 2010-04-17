@@ -2,8 +2,10 @@
 
 %p
   %strong Name:
-  =h @category.name
-
+  =h @category
+%p
+  %strong Guests:
+  =h @category.guests.count
 %p
   = link_to "Edit", edit_category_path(@category)
   |
