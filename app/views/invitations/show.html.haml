@@ -5,7 +5,7 @@
   =h @invitation.name
 %p
   %strong Guests:
-  =h @invitation.guests
+  =h @invitation.guests.join(',')
 
 %p
   = link_to "Edit", edit_invitation_path(@invitation)

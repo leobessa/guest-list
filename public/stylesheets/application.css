@@ -80,16 +80,9 @@ a {
   list-style: disc;
 }
 
-#guests tr:nth-child(even) {
+tr:nth-child(odd) {
   background: #dde;
 }
-#guests tr:nth-child(odd) {
-  background: white;
-}
-
-#categories tr:nth-child(even) {
-  background: #dde;
-}
-#categories tr:nth-child(odd) {
+tr:nth-child(even) {
   background: white;
 }

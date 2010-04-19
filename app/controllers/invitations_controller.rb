@@ -1,6 +1,6 @@
 class InvitationsController < ApplicationController
   def index
-    @invitations = Invitation.all
+    @invitations = Invitation.all(:include => :guests)
   end
   
   def show

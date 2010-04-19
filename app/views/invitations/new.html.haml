@@ -1,5 +1,11 @@
 - title "New Invitation"
 
-= render :partial => 'form'
+- semantic_form_for @invitation do |f|
+  = f.error_messages
+  - f.inputs do
+    = f.input :name
+    = f.input :guests, :collection => Guest.without_invitation
+  - f.buttons do
+    = f.commit_button
 
 %p= link_to "Back to List", invitations_path

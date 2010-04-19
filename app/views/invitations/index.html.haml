@@ -4,10 +4,12 @@
   %tr
     %th Name
     %th Guests
+    %th Count
   - for invitation in @invitations
     %tr
       %td= h invitation.name
-      %td= h invitation.guests
+      %td= h invitation.guests.join(',')
+      %td= invitation.guests.count
       %td= link_to 'Show', invitation
       %td= link_to 'Edit', edit_invitation_path(invitation)
       %td= link_to 'Destroy', invitation, :confirm => 'Are you sure?', :method => :delete

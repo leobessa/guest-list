@@ -1,6 +1,6 @@
 class GuestsController < ApplicationController
   def index
-    @guests = Guest.all(:include => :category)
+    @guests = Guest.paginate(:page => params[:page], :include => :category)
   end
   
   def show
