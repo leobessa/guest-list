@@ -2,6 +2,6 @@
   = f.error_messages
   - f.inputs do
     = f.input :name
-    = f.input :guests
+    = f.input :guests, :as => :check_boxes
   - f.buttons do
     = f.commit_button
