@@ -5,3 +5,11 @@
 #   
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
+
+FasterCSV.foreach("#{RAILS_ROOT}/db/guests.csv", :col_sep => "\t") do |row|
+    category_name = row[0]
+    guest_name = row[1]
+    essential = row[2] == 'n'
+    category = Category.find_or_create_by_name(category_name)
+    Guest.create!(:name => guest_name, :category => category, :essential => essential)
+end

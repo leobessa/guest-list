@@ -1,6 +1,6 @@
 class GuestsController < ApplicationController
   def index
-    @guests = Guest.all
+    @guests = Guest.all(:include => :category)
   end
   
   def show
