@@ -14,6 +14,7 @@
       root.add "Categories", categories_path
       root.add "Guests", guests_path
       root.add "Invitations", invitations_path
+      root.add "Logout", destroy_user_session_path if user_signed_in?
     end %>
     <div id="container">
       

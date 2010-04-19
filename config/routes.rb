@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.devise_for :users
+
   map.resources :invitations
 
   map.resources :guests, :collection => { :edit_multiple => :post, :update_multiple => :put }  
