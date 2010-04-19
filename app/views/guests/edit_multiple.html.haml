@@ -1,0 +1,17 @@
+%h1 Edit Multiple Guests
+- form_for :guest, :url => update_multiple_guests_path, :html => { :method => :put } do |form|
+  %ul
+    - for guest in @guests
+      %li
+        = h guest.name
+        = hidden_field_tag "guest_ids[]", guest.id
+  %p
+    = form.label :category_id
+    %br
+    = form.collection_select :category_id, Category.all, :id, :name, :include_blank => true
+  %p
+    = form.label :essential
+    %br
+    = form.select :essential, [["Yes", true], ["No", false]], :include_blank => true
+  %p
+    = form.submit "Submit"

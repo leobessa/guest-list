@@ -2,6 +2,7 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title><%= h(yield(:title) || "Untitled") %></title>
     <%= stylesheet_link_tag 'application', 'semantic-menu' %>
     <%= formtastic_stylesheet_link_tag %>
@@ -9,6 +10,7 @@
   </head>
   <body>
     <%= semantic_menu :class => 'top_level_nav' do |root|
+      root.add "Dashboard", dashboard_path
       root.add "Categories", categories_path
       root.add "Guests", guests_path
       root.add "Invitations", invitations_path

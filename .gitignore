@@ -4,3 +4,4 @@ log/*.log
 .DS_Store
 rerun.txt
 db/*.sqlite3
+db/*.csv

@@ -25,6 +25,10 @@ class GuestsController < ApplicationController
     @guest = Guest.find(params[:id])
   end
   
+  def edit_multiple  
+    @guests = Guest.find(params[:guest_ids])  
+  end
+  
   def update
     @guest = Guest.find(params[:id])
     if @guest.update_attributes(params[:guest])
@@ -33,6 +37,15 @@ class GuestsController < ApplicationController
     else
       render :action => 'edit'
     end
+  end
+  
+  def update_multiple  
+    @guests = Guest.find(params[:guest_ids])  
+    @guests.each do |guest|  
+      guest.update_attributes!(params[:guest].reject { |k,v| v.blank? })  
+    end  
+    flash[:notice] = "Updated guests!"  
+    redirect_to guests_path  
   end
   
   def destroy

@@ -79,3 +79,17 @@ a {
   font-size: 12px;
   list-style: disc;
 }
+
+#guests tr:nth-child(even) {
+  background: #dde;
+}
+#guests tr:nth-child(odd) {
+  background: white;
+}
+
+#categories tr:nth-child(even) {
+  background: #dde;
+}
+#categories tr:nth-child(odd) {
+  background: white;
+}
