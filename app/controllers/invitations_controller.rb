@@ -12,6 +12,7 @@ class InvitationsController < ApplicationController
   end
   
   def create
+    params[:invitation][:guest_ids] = params[:as_values_invitation_guest_ids].split(',') if params[:as_values_invitation_guest_ids]
     @invitation = Invitation.new(params[:invitation])
     if @invitation.save
       flash[:notice] = "Successfully created invitation."

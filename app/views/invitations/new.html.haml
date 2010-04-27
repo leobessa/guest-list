@@ -4,7 +4,7 @@
   = f.error_messages
   - f.inputs do
     = f.input :name
-    = f.input :guests, :collection => Guest.without_invitation, :as => :check_boxes
+    = f.input :guests, :collection => Guest.without_invitation, :as => :check_boxes, :wrapper_html => { :class => 'autosuggest' }
   - f.buttons do
     = f.commit_button
 

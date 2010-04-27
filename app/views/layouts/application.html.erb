@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title><%= h(yield(:title) || "Untitled") %></title>
-    <%= stylesheet_link_tag 'application', 'semantic-menu' %>
+    <%= stylesheet_link_tag :all %>
     <%= formtastic_stylesheet_link_tag %>
     <%= yield(:head) %>
   </head>
@@ -28,5 +28,6 @@
       
       <%= yield %>
     </div>
+    <%= javascript_include_tag 'jquery-1.4.2', 'jquery.autoSuggest', 'application' %>
   </body>
 </html>
