@@ -1,3 +1,3 @@
 class Invitation < ActiveRecord::Base
-  has_many :guests
+  has_many :guests, :dependent => :nullify
 end
