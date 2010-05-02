@@ -4,15 +4,19 @@
   %table#guests
     %tr
       %th
+      %th
       %th Name
       %th Category
       %th Essential
+      %th Invitation
     - for guest in @guests
       %tr
         %td= check_box_tag "guest_ids[]", guest.id
+        %td= guest.id
         %td= h guest.name
         %td= h guest.category
         %td= h guest.essential
+        %td= if guest.invitation then link_to("Invitation", guest.invitation) else "-" end
         %td= link_to 'Show', guest
         %td= link_to 'Edit', edit_guest_path(guest)
         %td= link_to 'Destroy', guest, :confirm => 'Are you sure?', :method => :delete
