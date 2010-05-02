@@ -5,7 +5,7 @@ class Guest < ActiveRecord::Base
   named_scope :with_invitation, :conditions => "invitation_id IS NOT NULL"
   belongs_to :invitation
   
-  default_scope :order => 'created_at DESC'
+  default_scope :order => 'id DESC'
   
   def to_s
     name
