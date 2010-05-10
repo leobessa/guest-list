@@ -3,7 +3,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :invitations
 
-  map.resources :guests, :collection => { :edit_multiple => :post, :update_multiple => :put }  
+  map.resources :guests, :collection => { :tea_party => :get }  
 
   map.resources :categories
 

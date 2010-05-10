@@ -9,46 +9,48 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100419051721) do
+ActiveRecord::Schema.define(:version => 20100510005631) do
 
   create_table "categories", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "name"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "guests", :force => true do |t|
-    t.string   "name"
-    t.integer  "category_id"
-    t.boolean  "essential"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "invitation_id"
+    t.string    "name"
+    t.integer   "category_id"
+    t.boolean   "essential"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "invitation_id"
+    t.boolean   "tea_party"
+    t.string    "email"
   end
 
   create_table "invitations", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "name"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                               :default => "", :null => false
-    t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
-    t.string   "password_salt",                       :default => "", :null => false
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string   "reset_password_token"
-    t.string   "remember_token"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                       :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "email",                               :default => "", :null => false
+    t.string    "encrypted_password",   :limit => 128, :default => "", :null => false
+    t.string    "password_salt",                       :default => "", :null => false
+    t.string    "confirmation_token"
+    t.timestamp "confirmed_at"
+    t.timestamp "confirmation_sent_at"
+    t.string    "reset_password_token"
+    t.string    "remember_token"
+    t.timestamp "remember_created_at"
+    t.integer   "sign_in_count",                       :default => 0
+    t.timestamp "current_sign_in_at"
+    t.timestamp "last_sign_in_at"
+    t.string    "current_sign_in_ip"
+    t.string    "last_sign_in_ip"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

@@ -1,25 +1,32 @@
 - title "Guests"
 %p= link_to "New Guest", new_guest_path
-- form_tag edit_multiple_guests_path do
-  %table#guests
-    %tr
-      %th
-      %th
-      %th Name
-      %th Category
-      %th Essential
-      %th Invitation
-    - for guest in @guests
-      %tr
-        %td= check_box_tag "guest_ids[]", guest.id
-        %td= guest.id
-        %td= h guest.name
-        %td= h guest.category
-        %td= h guest.essential
-        %td= if guest.invitation then link_to("Invitation", guest.invitation) else "-" end
-        %td= link_to 'Show', guest
-        %td= link_to 'Edit', edit_guest_path(guest)
-        %td= link_to 'Destroy', guest, :confirm => 'Are you sure?', :method => :delete
-  = submit_tag "Edit Checked" 
-/ = will_paginate @guests
+%table#guests
+  %tr
+    %th
+    %th Name
+    %th Email
+    %th Category
+    %th Essential
+    %th Chá bar
+    %th Invitation
+    %th
+  - for guest in @guests
+    %tr[guest]
+      %td= guest.id
+      %td= link_to guest.name, guest
+      %td= h guest.email
+      %td= h guest.category
+      %td= h guest.essential
+      %td
+        - if guest.tea_party
+          - link_to({:action => :update, :id => guest.id, :guest => {:tea_party => false}} , :method => :put, :class => :button) do
+            %span.delete Remove
+        - else
+          - link_to({:action => :update, :id => guest.id, :guest => {:tea_party => true}} , :method => :put, :class => :button) do
+            %span.add Add
+      %td
+        - if guest.invitation
+          - link_to(guest.invitation, :title => guest.invitation.name, :class => :button) do
+            %span.msg Invitation
+      %td= link_to('edit', edit_guest_path(guest))
 

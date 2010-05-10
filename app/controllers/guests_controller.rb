@@ -1,6 +1,10 @@
 class GuestsController < ApplicationController
   def index
-    @guests = Guest.all #Guest.paginate(:page => params[:page], :include => :category)
+    @guests = Guest.all
+  end
+  
+  def tea_party
+    @guests = Guest.tea_party
   end
   
   def show
@@ -25,27 +29,14 @@ class GuestsController < ApplicationController
     @guest = Guest.find(params[:id])
   end
   
-  def edit_multiple  
-    @guests = Guest.find(params[:guest_ids])  
-  end
-  
   def update
     @guest = Guest.find(params[:id])
     if @guest.update_attributes(params[:guest])
       flash[:notice] = "Successfully updated guest."
-      redirect_to @guest
+      redirect_to(guests_path(:anchor => "guest_#{@guest.id}"))
     else
       render :action => 'edit'
     end
-  end
-  
-  def update_multiple  
-    @guests = Guest.find(params[:guest_ids])  
-    @guests.each do |guest|  
-      guest.update_attributes!(params[:guest].reject { |k,v| v.blank? })  
-    end  
-    flash[:notice] = "Updated guests!"  
-    redirect_to guests_path  
   end
   
   def destroy

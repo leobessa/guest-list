@@ -4,11 +4,17 @@
   %strong Name:
   =h @guest.name
 %p
+  %strong Email:
+  =h @guest.email
+%p
   %strong Category:
   = link_to @guest.category, @guest.category
 %p
   %strong Essential:
   =h @guest.essential
+%p
+  %strong Chá bar:
+  =h @guest.tea_party
 
 %p
   = link_to "Edit", edit_guest_path(@guest)

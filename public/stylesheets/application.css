@@ -86,3 +86,60 @@ tr:nth-child(odd) {
 tr:nth-child(even) {
   background: white;
 }
+
+a.button{
+	background:url(/images/button.gif);
+	display:block;
+	color:#555555;
+	font-weight:bold;
+	height:30px;
+	line-height:29px;
+	margin-bottom:14px;
+	text-decoration:none;
+	width:120px;
+}
+a:hover.button{
+	color:#0066CC;
+}
+
+.add{
+	background:url(/images/add.gif) no-repeat 10px 8px;
+	text-indent:30px;
+	display:block;
+}
+.delete{
+	background:url(/images/delete.gif) no-repeat 10px 8px;
+	text-indent:30px;
+	display:block;
+}
+.user{
+	background:url(/images/user.gif) no-repeat 10px 8px;
+	text-indent:30px;
+	display:block;
+}
+.alert{
+	background:url(/images/alert.gif) no-repeat 10px 8px;
+	text-indent:30px;
+	display:block;
+}
+.msg{
+	background:url(/images/msg.gif) no-repeat 10px 8px;
+	text-indent:30px;
+	display:block;
+}
+.download{
+	background:url(/images/download.gif) no-repeat 10px 8px;
+	text-indent:30px;
+	display:block;
+}
+
+.lens{
+	background:url(/images/lens.gif) no-repeat 10px 8px;
+	text-indent:30px;
+	display:block;
+}
+.info{
+	background:url( info.gif) no-repeat 10px 8px;
+	text-indent:30px;
+	display:block;
+}

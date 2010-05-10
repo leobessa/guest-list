@@ -1,0 +1,9 @@
+- title "Chá bar"
+%table#guests
+  %tr
+    %th Name
+    %th Email
+  - for guest in @guests
+    %tr[guest]
+      %td= link_to guest.name, guest
+      %td= h guest.email
