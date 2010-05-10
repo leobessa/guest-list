@@ -1,4 +1,13 @@
 - title "Guests"
+%div
+  %h2 Search
+  - semantic_form_for @search do |f|
+    - f.inputs do
+      = f.input :name_like, :label => "Name"
+      = f.input :category_id_equals, :as => :select, :collection => Category.all, :include_blank => true, :label => "Category"
+      = f.input :having_invitation, :as => :radio, :collection => {:yes => true,:no => false, :both => :both}, :label => "With invitation"
+    - f.buttons do
+      = f.commit_button "Search"
 %p= link_to "New Guest", new_guest_path
 %table#guests
   %tr

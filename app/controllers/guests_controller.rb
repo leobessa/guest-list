@@ -1,6 +1,7 @@
 class GuestsController < ApplicationController
   def index
-    @guests = Guest.all
+    @search = Guest.search(params[:search])  
+    @guests = @search.all
   end
   
   def tea_party
