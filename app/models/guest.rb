@@ -1,5 +1,7 @@
 class Guest < ActiveRecord::Base
   belongs_to :category
+  named_scope :dismissed, :conditions => {:dismissed => true}
+  named_scope :not_dismissed, :conditions => ['dismissed IS ? OR dismissed = ?',nil,false]
   named_scope :essential, :conditions => {:essential => true}
   named_scope :tea_party, :conditions => {:tea_party => true}  
   named_scope :without_invitation, :conditions => {:invitation_id => nil}

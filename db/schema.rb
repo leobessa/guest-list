@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100606203754) do
+ActiveRecord::Schema.define(:version => 20100606231422) do
 
   create_table "categories", :force => true do |t|
     t.string    "name"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20100606203754) do
     t.integer   "invitation_id"
     t.boolean   "tea_party"
     t.string    "email"
+    t.boolean   "dismissed"
   end
 
   create_table "invitations", :force => true do |t|

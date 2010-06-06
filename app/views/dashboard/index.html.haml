@@ -1,9 +1,11 @@
 %h1 Dashboard
 
-%p= "Guest count: #{Guest.count}"
+%p
+  %b= "(Essential - Dismissed) guest count: #{Guest.essential.not_dismissed.count}"
 %p= "Essential guest count: #{Guest.essential.count}"
+%p= "Dismissed guest count: #{Guest.dismissed.count}"
 %p= "Guest without invitation count: #{Guest.without_invitation.count}"
 %p= "Chá bar guest count: #{Guest.tea_party.count}"
 
-
+%p= "Guest count: #{Guest.count}"
   
