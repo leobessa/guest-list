@@ -3,12 +3,16 @@
 %table
   %tr
     %th Name
+    %th Phone
     %th Guests
-    %th Count
+    %th Essential Count
+    %th Total Count
   - for invitation in @invitations
     %tr
       %td= h invitation.name
-      %td= h invitation.guests.join(',')
+      %td= h invitation.phone
+      %td= invitation.guests.map{|g| link_to(g.name, edit_guest_path(g),:style => g.essential? ? '' : 'text-decoration: Line-through')}.join(',')
+      %td= invitation.guests.select(&:essential).count
       %td= invitation.guests.count
       %td= link_to 'Show', invitation
       %td= link_to 'Edit', edit_invitation_path(invitation)
